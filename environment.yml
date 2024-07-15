@@ -1,0 +1,14 @@
+name: 2024_aso_evolution
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+- python>=3.6
+- pandas
+- numpy
+- scipy
+- matplotlib
+- seaborn
+- jupyterlab
+- biopython

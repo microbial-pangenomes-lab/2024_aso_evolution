@@ -1,0 +1,106 @@
+set,bug,state,state-2,source,drug,replicate,mic1,mic2,mbc1,mbc2
+P,pseudomonas,evolved,evolved,own,rxr-acpp,1,7.5,3.75,,
+P,pseudomonas,evolved,evolved,own,rxr-acpp,2,7.5,7.5,,
+P,pseudomonas,evolved,evolved,own,rxr-acpp,3,3.75,3.75,,
+P,pseudomonas,evolved,evolved,own,rxr-acpp,4,3.75,3.75,,
+P,pseudomonas,evolved,evolved,own,rxr-acpp,5,7.5,7.5,,
+P,pseudomonas,evolved,evolved,own,rxr-acpp,6,3.75,3.75,,
+P,pseudomonas,evolved,evolved,own,rxr-acpp,7,3.75,7.5,,
+P,pseudomonas,evolved,evolved,own,rxr-acpp,8,3.75,3.75,,
+P,pseudomonas,evolved,evolved,own,rxr-acpp,9,7.5,7.5,,
+P,pseudomonas,evolved,evolved,own,rxr-acpp,10,7.5,7.5,,
+K,klebsiella,evolved,evolved,own,kff-acpp,1,20,20,20,40
+K,klebsiella,evolved,evolved,own,kff-acpp,2,10,5,20,20
+K,klebsiella,evolved,evolved,own,kff-acpp,3,2.5,2.5,2.5,2.5
+K,klebsiella,evolved,evolved,own,kff-acpp,4,2.5,2.5,5,5
+K,klebsiella,evolved,evolved,own,kff-acpp,5,20,40,20,20
+K,klebsiella,evolved,evolved,own,kff-acpp,6,20,20,20,20
+K,klebsiella,evolved,evolved,own,kff-acpp,7,20,20,20,20
+K,klebsiella,evolved,evolved,own,kff-acpp,8,20,20,20,20
+K,klebsiella,evolved,evolved,own,kff-acpp,9,2.5,2.5,2.5,5
+K,klebsiella,evolved,evolved,own,kff-acpp,10,2.5,2.5,2.5,2.5
+S,salmonella,evolved,evolved,own,kff-acpp,1,20,20,40,20
+S,salmonella,evolved,evolved,own,kff-acpp,2,20,20,80,160
+S,salmonella,evolved,evolved,own,kff-acpp,3,40,40,160,80
+S,salmonella,evolved,evolved,own,kff-acpp,4,10,20,40,80
+S,salmonella,evolved,evolved,own,kff-acpp,5,10,10,20,40
+S,salmonella,evolved,evolved,own,kff-acpp,6,10,10,20,40
+S,salmonella,evolved,evolved,own,kff-acpp,7,10,10,40,40
+S,salmonella,evolved,evolved,own,kff-acpp,8,5,5,5,5
+S,salmonella,evolved,evolved,own,kff-acpp,9,20,10,80,40
+S,salmonella,evolved,evolved,own,kff-acpp,10,20,20,40,80
+U,upec,evolved,evolved,own,kff-acpp,1,2.5,2.5,2.5,2.5
+U,upec,evolved,evolved,own,kff-acpp,2,2.5,2.5,2.5,2.5
+U,upec,evolved,evolved,own,kff-acpp,3,2.5,2.5,2.5,2.5
+U,upec,evolved,evolved,own,kff-acpp,4,2.5,2.5,2.5,2.5
+U,upec,evolved,evolved,own,kff-acpp,5,5,2.5,5,2.5
+U,upec,evolved,evolved,own,kff-acpp,6,2.5,1.25,2.5,1.25
+U,upec,evolved,evolved,own,kff-acpp,7,5,2.5,5,2.5
+U,upec,evolved,evolved,own,kff-acpp,8,5,5,5,5
+U,upec,evolved,evolved,own,kff-acpp,9,2.5,2.5,2.5,2.5
+U,upec,evolved,evolved,own,kff-acpp,10,2.5,2.5,5,5
+R,k12,evolved,evolved,own,kff-rpsh,1,10,5,10,10
+R,k12,evolved,evolved,own,kff-rpsh,2,10,10,10,10
+R,k12,evolved,evolved,own,kff-rpsh,3,10,10,10,10
+R,k12,evolved,evolved,own,kff-rpsh,4,10,10,10,10
+R,k12,evolved,evolved,own,kff-rpsh,5,10,10,10,10
+R,k12,evolved,evolved,own,kff-rpsh,6,10,5,10,10
+R,k12,evolved,evolved,own,kff-rpsh,7,10,10,10,10
+R,k12,evolved,evolved,own,kff-rpsh,8,10,5,10,10
+R,k12,evolved,evolved,own,kff-rpsh,9,10,10,10,10
+R,k12,evolved,evolved,own,kff-rpsh,10,10,10,10,10
+X,k12,evolved,evolved,own,rxr-acpp,1,2.5,2.5,,
+X,k12,evolved,evolved,own,rxr-acpp,2,2.5,2.5,,
+X,k12,evolved,evolved,own,rxr-acpp,3,2.5,2.5,,
+X,k12,evolved,evolved,own,rxr-acpp,4,2.5,2.5,,
+X,k12,evolved,evolved,own,rxr-acpp,5,10,10,,
+X,k12,evolved,evolved,own,rxr-acpp,6,2.5,2.5,,
+X,k12,evolved,evolved,own,rxr-acpp,7,2.5,2.5,,
+X,k12,evolved,evolved,own,rxr-acpp,8,5,5,,
+X,k12,evolved,evolved,own,rxr-acpp,9,2.5,2.5,,
+X,k12,evolved,evolved,own,rxr-acpp,10,2.5,2.5,,
+A,k12,evolved,evolved,own,kff-acpp-d,1,5,5,10,5
+A,k12,evolved,evolved,own,kff-acpp-d,2,5,5,10,10
+A,k12,evolved,evolved,own,kff-acpp-d,3,10,5,10,5
+A,k12,evolved,evolved,own,kff-acpp-d,4,5,5,5,10
+A,k12,evolved,evolved,own,kff-acpp-d,5,10,10,10,10
+A,k12,evolved,evolved,own,kff-acpp-d,6,5,10,5,10
+A,k12,evolved,evolved,own,kff-acpp-d,7,5,5,10,10
+A,k12,evolved,evolved,own,kff-acpp-d,8,5,5,10,10
+A,k12,evolved,evolved,own,kff-acpp-d,9,5,5,10,10
+A,k12,evolved,evolved,own,kff-acpp-d,10,10,10,10,10
+K,klebsiella,ancestral,ancestral-HIRI,previous,kff-acpp,1,1.25,,,
+S,salmonella,ancestral,ancestral-HIRI,previous,kff-acpp,1,1.25,,,
+U,upec,ancestral,ancestral-HIRI,previous,kff-acpp,1,1.25,,,
+R,k12,ancestral,ancestral-HIRI,previous,kff-rpsh,1,5,,,
+X,k12,ancestral,ancestral-HIRI,previous,rxr-acpp,1,2.5,,,
+A,k12,ancestral,ancestral-HIRI,previous,kff-acpp-d,1,5,,,
+P,pseudomonas,ancestral,ancestral-MHH,own,rxr-acpp,1,3.75,3.75,,
+K,klebsiella,ancestral,ancestral-MHH,own,kff-acpp,1,2.5,,,
+S,salmonella,ancestral,ancestral-MHH,own,kff-acpp,1,0.625,,,
+U,upec,ancestral,ancestral-MHH,own,kff-acpp,1,1.25,,,
+M,k12,ancestral,ancestral-MHH,own,kff-acpp,1,5,5,5,5
+J,k12-smba-mutant ,ancestral,ancestral-MHH,own,kff-acpp,1,20,20,20,20
+R,k12,ancestral,ancestral-MHH,own,kff-rpsh,1,2.5,,,
+X,k12,ancestral,ancestral-MHH,own,rxr-acpp,1,2.5,2.5,,
+A,k12,ancestral,ancestral-MHH,own,kff-acpp-d,1,5,,,
+M,k12,evolved,evolved,own,kff-acpp,1,20,,80,
+M,k12,evolved,evolved,own,kff-acpp,2,80,,80,
+M,k12,evolved,evolved,own,kff-acpp,3,40,,80,
+M,k12,evolved,evolved,own,kff-acpp,4,20,,40,
+M,k12,evolved,evolved,own,kff-acpp,5,20,,20,
+M,k12,evolved,evolved,own,kff-acpp,6,20,,40,
+M,k12,evolved,evolved,own,kff-acpp,7,20,,20,
+M,k12,evolved,evolved,own,kff-acpp,8,20,,40,
+M,k12,evolved,evolved,own,kff-acpp,9,20,,20,
+M,k12,evolved,evolved,own,kff-acpp,10,40,,40,
+J,k12-smba-mutant ,evolved,evolved,own,kff-acpp,1,40,,40,
+J,k12-smba-mutant ,evolved,evolved,own,kff-acpp,2,40,,40,
+J,k12-smba-mutant ,evolved,evolved,own,kff-acpp,3,40,,40,
+J,k12-smba-mutant ,evolved,evolved,own,kff-acpp,4,40,,80,
+J,k12-smba-mutant ,evolved,evolved,own,kff-acpp,5,40,,40,
+J,k12-smba-mutant ,evolved,evolved,own,kff-acpp,6,40,,40,
+J,k12-smba-mutant ,evolved,evolved,own,kff-acpp,7,40,,40,
+J,k12-smba-mutant ,evolved,evolved,own,kff-acpp,8,40,,80,
+J,k12-smba-mutant ,evolved,evolved,own,kff-acpp,9,40,,40,
+J,k12-smba-mutant ,evolved,evolved,own,kff-acpp,10,40,,40,
