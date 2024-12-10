@@ -3,6 +3,7 @@
 set -e -u -o pipefail -x
 
 # prepare reference genome table
+mkdir -p data/references/tsv/
 python src/gbk2table.py data/references/gbk/ecoli.gbk.gz > data/references/tsv/ecoli.tsv
 python src/gbk2table.py --strip-version data/references/gbk/klebsiella.gbk.gz > data/references/tsv/klebsiella.tsv
 python src/gbk2table.py --strip-version data/references/gbk/pseudomonas.gbk.gz > data/references/tsv/pseudomonas.tsv
