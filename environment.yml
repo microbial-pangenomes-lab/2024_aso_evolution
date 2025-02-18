@@ -16,3 +16,4 @@ dependencies:
 - pybedtools
 - breseq
 - goatools
+- clustalo

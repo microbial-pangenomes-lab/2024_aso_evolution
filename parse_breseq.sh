@@ -99,3 +99,57 @@ do
   python src/parse_gd.py data/breseq/raw_minus_references_minus_control/X$(printf "%02d" $i).gd data/references/tsv/ecoli.tsv data/breseq/tsv_minus_references_minus_control/X$(printf "%02d" $i).tsv;
 done
 
+# apply mutations to selected samples
+zcat data/references/gbk/ecoli.gbk.gz > data/references/gbk/ecoli.gbk
+zcat data/references/gbk/upec.gbk.gz > data/references/gbk/upec.gbk
+
+mkdir -p data/breseq/gbk_minus_references
+grep -e '^#' data/breseq/raw_minus_references/X05.gd > data/breseq/gbk_minus_references/X05.gd
+grep 1151613 data/breseq/raw_minus_references/X05.gd >> data/breseq/gbk_minus_references/X05.gd
+gdtools APPLY -o data/breseq/gbk_minus_references/X05.gbk -f GENBANK -r data/references/gbk/ecoli.gbk data/breseq/gbk_minus_references/X05.gd -p
+python src/prepare_fastas.py data/references/gbk/ecoli.gbk data/breseq/gbk_minus_references/X05.gbk --position 1151613 --window 2000 > data/breseq/gbk_minus_references/X05.fasta
+
+grep -e '^#' data/breseq/raw_minus_references/X08.gd > data/breseq/gbk_minus_references/X08.gd
+grep 1151614 data/breseq/raw_minus_references/X08.gd >> data/breseq/gbk_minus_references/X08.gd
+gdtools APPLY -o data/breseq/gbk_minus_references/X08.gbk -f GENBANK -r data/references/gbk/ecoli.gbk data/breseq/gbk_minus_references/X08.gd -p
+python src/prepare_fastas.py data/references/gbk/ecoli.gbk data/breseq/gbk_minus_references/X08.gbk --position 1151614 --window 2000 > data/breseq/gbk_minus_references/X08.fasta
+
+grep -e '^#' data/breseq/raw_minus_references/R08.gd > data/breseq/gbk_minus_references/R08.gd
+grep 4542448 data/breseq/raw_minus_references/R08.gd >> data/breseq/gbk_minus_references/R08.gd
+gdtools APPLY -o data/breseq/gbk_minus_references/R08.gbk -f GENBANK -r data/references/gbk/ecoli.gbk data/breseq/gbk_minus_references/R08.gd -p
+python src/prepare_fastas.py data/references/gbk/ecoli.gbk data/breseq/gbk_minus_references/R08.gbk --position 4542448 --window 2000 > data/breseq/gbk_minus_references/R08.fasta
+
+grep -e '^#' data/breseq/raw_minus_references/U02.gd > data/breseq/gbk_minus_references/U02.gd
+grep 1288429 data/breseq/raw_minus_references/U02.gd >> data/breseq/gbk_minus_references/U02.gd
+gdtools APPLY -o data/breseq/gbk_minus_references/U02.gbk -f GENBANK -r data/references/gbk/upec.gbk data/breseq/gbk_minus_references/U02.gd -p
+python src/prepare_fastas.py data/references/gbk/upec.gbk data/breseq/gbk_minus_references/U02.gbk --position 1288429 --window 2000 > data/breseq/gbk_minus_references/U02.fasta
+
+grep -e '^#' data/breseq/raw_minus_references/M02.gd > data/breseq/gbk_minus_references/M02.gd
+grep 3035546 data/breseq/raw_minus_references/M02.gd >> data/breseq/gbk_minus_references/M02.gd
+gdtools APPLY -o data/breseq/gbk_minus_references/M02.gbk -f GENBANK -r data/references/gbk/ecoli.gbk data/breseq/gbk_minus_references/M02.gd -p
+python src/prepare_fastas.py data/references/gbk/ecoli.gbk data/breseq/gbk_minus_references/M02.gbk --position 3035546 --window 2000 > data/breseq/gbk_minus_references/M02.fasta
+
+grep -e '^#' data/breseq/raw_minus_references/M08.gd > data/breseq/gbk_minus_references/M08_yaiW.gd
+grep 392967 data/breseq/raw_minus_references/M08.gd >> data/breseq/gbk_minus_references/M08_yaiW.gd
+gdtools APPLY -o data/breseq/gbk_minus_references/M08_yaiW.gbk -f GENBANK -r data/references/gbk/ecoli.gbk data/breseq/gbk_minus_references/M08_yaiW.gd -p
+python src/prepare_fastas.py data/references/gbk/ecoli.gbk data/breseq/gbk_minus_references/M08_yaiW.gbk --position 392967 --window 2000 > data/breseq/gbk_minus_references/M08_yaiW.fasta
+
+grep -e '^#' data/breseq/raw_minus_references/M08.gd > data/breseq/gbk_minus_references/M08_ykfM.gd
+grep 238507 data/breseq/raw_minus_references/M08.gd >> data/breseq/gbk_minus_references/M08_ykfM.gd
+gdtools APPLY -o data/breseq/gbk_minus_references/M08_ykfM.gbk -f GENBANK -r data/references/gbk/ecoli.gbk data/breseq/gbk_minus_references/M08_ykfM.gd -p
+python src/prepare_fastas.py data/references/gbk/ecoli.gbk data/breseq/gbk_minus_references/M08_ykfM.gbk --position 238507 --window 2000 > data/breseq/gbk_minus_references/M08_ykfM.fasta
+
+# controls
+grep -e '^#' data/breseq/raw_minus_references/X01.gd > data/breseq/gbk_minus_references/X01.gd
+grep 1151501 data/breseq/raw_minus_references/X01.gd >> data/breseq/gbk_minus_references/X01.gd
+gdtools APPLY -o data/breseq/gbk_minus_references/X01.gbk -f GENBANK -r data/references/gbk/ecoli.gbk data/breseq/gbk_minus_references/X01.gd -p
+python src/prepare_fastas.py data/references/gbk/ecoli.gbk data/breseq/gbk_minus_references/X01.gbk --position 1151501 --window 2000 > data/breseq/gbk_minus_references/X01.fasta
+
+#gdtools APPLY -o data/breseq/gbk_minus_references/M07.gbk -f GENBANK -r data/references/gbk/ecoli.gbk data/breseq/raw_minus_references/M07.gd -p
+#gdtools APPLY -o data/breseq/gbk_minus_references/R05.gbk -f GENBANK -r data/references/gbk/ecoli.gbk data/breseq/raw_minus_references/R05.gd -p
+
+# align the generated fastas for better annotation of the position of the desired mutation
+for i in $(ls data/breseq/gbk_minus_references/*.fasta);
+do
+  clustalo -i $i -o data/breseq/gbk_minus_references/$(basename $i .fasta).clustal --outfmt=clustal;
+done
