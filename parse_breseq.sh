@@ -25,6 +25,22 @@ do
   gdtools SUBTRACT -o data/breseq/raw_minus_references/X$(printf "%02d" $i).gd data/breseq/raw/X$(printf "%02d" $i).gd data/breseq/references/ecoli.gd;
 done
 
+mkdir -p data/breseq/negative_controls_minus_references
+for i in $(seq 1 4);
+do
+  gdtools SUBTRACT -o data/breseq/negative_controls_minus_references/A$(printf "%02d" $i).gd data/breseq/negative_controls/A$(printf "%02d" $i).gd data/breseq/references/ecoli.gd || echo A$(printf "%02d" $i);
+  gdtools SUBTRACT -o data/breseq/negative_controls_minus_references/D$(printf "%02d" $i).gd data/breseq/negative_controls/D$(printf "%02d" $i).gd data/breseq/references/ecoli.gd || echo D$(printf "%02d" $i);
+  gdtools SUBTRACT -o data/breseq/negative_controls_minus_references/E$(printf "%02d" $i).gd data/breseq/negative_controls/E$(printf "%02d" $i).gd data/breseq/references/upec.gd || echo E$(printf "%02d" $i);
+  gdtools SUBTRACT -o data/breseq/negative_controls_minus_references/F$(printf "%02d" $i).gd data/breseq/negative_controls/F$(printf "%02d" $i).gd data/breseq/references/klebsiella.gd || echo F$(printf "%02d" $i);
+  gdtools SUBTRACT -o data/breseq/negative_controls_minus_references/G$(printf "%02d" $i).gd data/breseq/negative_controls/G$(printf "%02d" $i).gd data/breseq/references/salmonella.gd || echo G$(printf "%02d" $i);
+  gdtools SUBTRACT -o data/breseq/negative_controls_minus_references/H$(printf "%02d" $i).gd data/breseq/negative_controls/H$(printf "%02d" $i).gd data/breseq/references/pseudomonas.gd || echo H$(printf "%02d" $i);
+done
+for i in $(seq 1 3);
+do
+  gdtools SUBTRACT -o data/breseq/negative_controls_minus_references/B$(printf "%02d" $i).gd data/breseq/negative_controls/B$(printf "%02d" $i).gd data/breseq/references/ecoli.gd || echo B$(printf "%02d" $i);
+  gdtools SUBTRACT -o data/breseq/negative_controls_minus_references/C$(printf "%02d" $i).gd data/breseq/negative_controls/C$(printf "%02d" $i).gd data/breseq/references/ecoli.gd || echo C$(printf "%02d" $i);
+done
+
 # also remove variants found in "control" samples
 mkdir -p data/breseq/raw_minus_references_minus_control
 for i in $(seq 1 10);
@@ -35,6 +51,18 @@ do
   gdtools SUBTRACT -o data/breseq/raw_minus_references_minus_control/S$(printf "%02d" $i).gd data/breseq/raw_minus_references/S$(printf "%02d" $i).gd data/breseq/raw/SC.gd;
   gdtools SUBTRACT -o data/breseq/raw_minus_references_minus_control/U$(printf "%02d" $i).gd data/breseq/raw_minus_references/U$(printf "%02d" $i).gd data/breseq/raw/UC.gd;
   gdtools SUBTRACT -o data/breseq/raw_minus_references_minus_control/X$(printf "%02d" $i).gd data/breseq/raw_minus_references/X$(printf "%02d" $i).gd data/breseq/raw/XC.gd;
+done
+mkdir -p data/breseq/negative_controls_minus_references_minus_control
+for i in $(seq 1 3);
+do
+  gdtools SUBTRACT -o data/breseq/negative_controls_minus_references_minus_control/A$(printf "%02d" $i).gd data/breseq/negative_controls_minus_references/A$(printf "%02d" $i).gd data/breseq/negative_controls_minus_references/A04.gd || echo A$(printf "%02d" $i);
+  gdtools SUBTRACT -o data/breseq/negative_controls_minus_references_minus_control/B$(printf "%02d" $i).gd data/breseq/negative_controls_minus_references/B$(printf "%02d" $i).gd data/breseq/negative_controls_minus_references/A04.gd || echo B$(printf "%02d" $i);
+  gdtools SUBTRACT -o data/breseq/negative_controls_minus_references_minus_control/C$(printf "%02d" $i).gd data/breseq/negative_controls_minus_references/C$(printf "%02d" $i).gd data/breseq/negative_controls_minus_references/A04.gd || echo C$(printf "%02d" $i);
+  gdtools SUBTRACT -o data/breseq/negative_controls_minus_references_minus_control/D$(printf "%02d" $i).gd data/breseq/negative_controls_minus_references/D$(printf "%02d" $i).gd data/breseq/negative_controls_minus_references/D04.gd || echo D$(printf "%02d" $i);
+  gdtools SUBTRACT -o data/breseq/negative_controls_minus_references_minus_control/E$(printf "%02d" $i).gd data/breseq/negative_controls_minus_references/E$(printf "%02d" $i).gd data/breseq/negative_controls_minus_references/E04.gd || echo E$(printf "%02d" $i);
+  gdtools SUBTRACT -o data/breseq/negative_controls_minus_references_minus_control/F$(printf "%02d" $i).gd data/breseq/negative_controls_minus_references/F$(printf "%02d" $i).gd data/breseq/negative_controls_minus_references/F04.gd || echo F$(printf "%02d" $i);
+  gdtools SUBTRACT -o data/breseq/negative_controls_minus_references_minus_control/G$(printf "%02d" $i).gd data/breseq/negative_controls_minus_references/G$(printf "%02d" $i).gd data/breseq/negative_controls_minus_references/G04.gd || echo G$(printf "%02d" $i);
+  gdtools SUBTRACT -o data/breseq/negative_controls_minus_references_minus_control/H$(printf "%02d" $i).gd data/breseq/negative_controls_minus_references/H$(printf "%02d" $i).gd data/breseq/negative_controls_minus_references/H04.gd || echo H$(printf "%02d" $i);
 done
 
 # identify variants present in all samples
@@ -97,6 +125,19 @@ do
   python src/parse_gd.py data/breseq/raw_minus_references_minus_control/S$(printf "%02d" $i).gd data/references/tsv/salmonella.tsv data/breseq/tsv_minus_references_minus_control/S$(printf "%02d" $i).tsv;
   python src/parse_gd.py data/breseq/raw_minus_references_minus_control/U$(printf "%02d" $i).gd data/references/tsv/upec.tsv data/breseq/tsv_minus_references_minus_control/U$(printf "%02d" $i).tsv;
   python src/parse_gd.py data/breseq/raw_minus_references_minus_control/X$(printf "%02d" $i).gd data/references/tsv/ecoli.tsv data/breseq/tsv_minus_references_minus_control/X$(printf "%02d" $i).tsv;
+done
+
+mkdir -p data/breseq/tsv_negative_controls_minus_references_minus_control
+for i in $(seq 1 3);
+do
+  python src/parse_gd.py data/breseq/negative_controls_minus_references_minus_control/A$(printf "%02d" $i).gd data/references/tsv/ecoli.tsv data/breseq/tsv_negative_controls_minus_references_minus_control/A$(printf "%02d" $i).tsv || echo A$(printf "%02d" $i);
+  python src/parse_gd.py data/breseq/negative_controls_minus_references_minus_control/B$(printf "%02d" $i).gd data/references/tsv/ecoli.tsv data/breseq/tsv_negative_controls_minus_references_minus_control/B$(printf "%02d" $i).tsv || echo B$(printf "%02d" $i);
+  python src/parse_gd.py data/breseq/negative_controls_minus_references_minus_control/C$(printf "%02d" $i).gd data/references/tsv/ecoli.tsv data/breseq/tsv_negative_controls_minus_references_minus_control/C$(printf "%02d" $i).tsv || echo C$(printf "%02d" $i);
+  python src/parse_gd.py data/breseq/negative_controls_minus_references_minus_control/D$(printf "%02d" $i).gd data/references/tsv/ecoli.tsv data/breseq/tsv_negative_controls_minus_references_minus_control/D$(printf "%02d" $i).tsv || echo D$(printf "%02d" $i);
+  python src/parse_gd.py data/breseq/negative_controls_minus_references_minus_control/E$(printf "%02d" $i).gd data/references/tsv/upec.tsv data/breseq/tsv_negative_controls_minus_references_minus_control/E$(printf "%02d" $i).tsv || echo E$(printf "%02d" $i);
+  python src/parse_gd.py data/breseq/negative_controls_minus_references_minus_control/F$(printf "%02d" $i).gd data/references/tsv/klebsiella.tsv data/breseq/tsv_negative_controls_minus_references_minus_control/F$(printf "%02d" $i).tsv || echo F$(printf "%02d" $i);
+  python src/parse_gd.py data/breseq/negative_controls_minus_references_minus_control/G$(printf "%02d" $i).gd data/references/tsv/salmonella.tsv data/breseq/tsv_negative_controls_minus_references_minus_control/G$(printf "%02d" $i).tsv || echo G$(printf "%02d" $i);
+  python src/parse_gd.py data/breseq/negative_controls_minus_references_minus_control/H$(printf "%02d" $i).gd data/references/tsv/pseudomonas.tsv data/breseq/tsv_negative_controls_minus_references_minus_control/H$(printf "%02d" $i).tsv || echo H$(printf "%02d" $i);
 done
 
 # apply mutations to selected samples

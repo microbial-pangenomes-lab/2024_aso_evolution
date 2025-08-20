@@ -142,6 +142,10 @@ if __name__ == "__main__":
     bed_cols = ['chrom', 'position_start', 'position_end', 'mutation_category']
     cols = bed_cols + sorted(set(r.columns).difference(bed_cols))
 
+    if r.shape[0] == 0:
+        print('No variants found, exiting')
+        open(options.output, 'w').close()
+        sys.exit(0)
     r = r[cols].sort_values(bed_cols)
 
     temp_file = tempfile.NamedTemporaryFile(delete=False)
